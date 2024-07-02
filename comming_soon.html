@@ -33,6 +33,15 @@
         <div class="search_user">
           <input type="text" placeholder="Search..." id="search_input" />
           <img src="img/user.jpg" alt="" />
+          <div class="search">
+            <a href="the boys.html" class="card">
+                        <img src="img/the boys.jpg" alt="">
+                        <div class="cont">
+                            <h3>The Boys </h3>
+                            <p>Action, 2021 , <span>IMDB</span><i class="bi bi-star-fill"></i> 9.6</p>
+                        </div>
+                    </a> 
+          </div>
         </div>
       </nav>
       <div class="card">
@@ -76,7 +85,29 @@
         </main>
       </div>
     </div>
-</section>
-</header>
-</body>
+  </section>
+  </header>
+  <script src="app.js"></script>
+  <script>
+    fetch(json_url)
+      .then((Response) => Response.json())
+      .then((data) => {
+        let movie_array = data.filter((ele) => {
+          return ele.name === "Jhon Wick";
+        });
+
+        document.getElementById("title").innerText = movie_array[0].name;
+        //document.getElementsByTagName("video")[0].setAttribute("src", movie_array[0].trailer);
+        //document.getElementsByTagName("video")[0].play();
+        document.getElementById("low_q").href = movie_array[0].low;
+        document.getElementById("medium_q").href = movie_array[0].medium;
+        document.getElementById("high_q").href = movie_array[0].high;
+        document.getElementById("gen").innerText = movie_array[0].genre;
+        document.getElementById("date").innerText = movie_array[0].date;
+        document.getElementById(
+          "rate"
+        ).innerHTML = `<span>IMDB</span><i class="bi bi-star-fill"></i> ${movie_array[0].imdb}`;
+      });
+    </script>
+  </body>
 </html>

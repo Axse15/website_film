@@ -34,13 +34,13 @@
           <input type="text" placeholder="Search..." id="search_input" />
           <img src="img/user.jpg" alt="" />
           <div class="search">
-            <!-- <a href="#" class="card">
-                        <img src="img/the boys.jpg" alt="">
+            <a href="ant man.html" class="card">
+                        <img src="img/ant man.jpg" alt="">
                         <div class="cont">
                             <h3>The Boys </h3>
                             <p>Action, 2021 , <span>IMDB</span><i class="bi bi-star-fill"></i> 9.6</p>
                         </div>
-                    </a> -->
+                    </a> 
           </div>
         </div>
       </nav>
@@ -100,10 +100,8 @@
           });
 
           document.getElementById("title").innerText = movie_array[0].name;
-          document
-            .getElementsByTagName("video")[0]
-            .setAttribute("src", movie_array[0].trailer);
-          document.getElementsByTagName("video")[0].play();
+          //document.getElementsByTagName("video")[0].setAttribute("src", movie_array[0].trailer);
+          //document.getElementsByTagName("video")[0].play();
           document.getElementById("low_q").href = movie_array[0].low;
           document.getElementById("medium_q").href = movie_array[0].medium;
           document.getElementById("high_q").href = movie_array[0].high;
